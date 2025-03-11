@@ -1,6 +1,9 @@
 {
-  "name": "@suha/code-shield",
+  "name": "@suha.thalib/code-shield",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "One-command setup for ESLint + Prettier + Husky",
   "type": "module",
   "main": "src/setup.js",

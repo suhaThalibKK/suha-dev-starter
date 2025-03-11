@@ -1,14 +1,14 @@
-# 🚀 **@suha/code-shield**  
+# 🚀 **@suha.thalib/code-shield**  
 ### **Zero-Config Code Quality Toolkit for Modern Projects**  
 
-[![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha/code-shield)
+[![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha.thalib/code-shield)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # 🔥 **Bye-Bye Config Headaches!**  
 ## ⚡ Quick Start
 
 ```bash
-npx @suha/code-shield
+npx @suha.thalib/code-shield
 ```
 
 ### _One Command to Rule All Code Quality_  
@@ -67,7 +67,7 @@ npx @suha/code-shield
 Run in any JS/TS project root:
 
 ```bash
-npx @suha/code-shield
+npx @suha.thalib/code-shield
 ```
 
  ## Commit like a pro:
@@ -104,7 +104,7 @@ A: Yes! Just install [`@typescript-eslint/parser`](https://npmjs.com/package/@ty
 
 **Q: Can I use this with Angular projects?**  
 A: Absolutely! Just follow these steps:  
-1. Run `npx @suha/code-shield`  
+1. Run `npx @suha.thalib/code-shield`  
 2. Install Angular-specific dependencies:  
    ```bash
    npm install --save-dev @angular-eslint/eslint-plugin @typescript-eslint/parser
