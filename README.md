@@ -1,10 +1,11 @@
 # 🚀 **@suha/code-shield**  
-### **Zero-Config ESLint + Prettier + Husky Starter Kit**  
+### **Zero-Config Code Quality Toolkit for Modern Projects**  
 
-[![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha/dev-starter)
+[![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha/code-shield)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # 🔥 **Bye-Bye Config Headaches!**  
+## ⚡ Quick Start
 
 ```bash
 npx @suha/code-shield
