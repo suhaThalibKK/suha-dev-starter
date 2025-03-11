@@ -1,0 +1,55 @@
+{
+  "name": "@suha/code-shield",
+  "version": "1.0.0",
+  "description": "One-command setup for ESLint + Prettier + Husky",
+  "type": "module",
+  "main": "src/setup.js",
+  "bin": {
+    "dev-starter": "./bin/dev-starter.js"
+  },
+  "scripts": {
+    "postinstall": "node src/setup.js",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "keywords": [
+    "eslint",
+    "prettier",
+    "husky",
+    "starter-kit",
+    "code-quality"
+  ],
+  "author": "Suha Thalib K K <suha.thalib@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^8.0.0",
+    "fs-extra": "^11.3.0"
+  },
+  "peerDependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
