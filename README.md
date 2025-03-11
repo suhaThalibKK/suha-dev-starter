@@ -1,10 +1,15 @@
-# 🚀 **@suha/dev-starter**  
+# 🚀 **@suha/code-shield**  
 ### **Zero-Config ESLint + Prettier + Husky Starter Kit**  
 
 [![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha/dev-starter)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # 🔥 **Bye-Bye Config Headaches!**  
+
+```bash
+npx @suha/code-shield
+```
+
 ### _One Command to Rule All Code Quality_  
 
 **Tired of...**  
@@ -12,9 +17,26 @@
 🤬 **Style debates** wasting PR time?  
 🚨 **"Oops" commits** slipping through?  
 
-```bash
-npx @suha/dev-starter
-```
+
+## 💔 _We've All Been There..._
+
+| Developer Frustration 😤         |    Solution 💡                                                                 |
+|----------------------------------|---------------------------------------------------------------------------------|
+| 🚨 **"Why does CI keep failing?!"** | 🐶 **Husky Guard**: Blocks bad commits *before* they reach CI/CD                |
+| 💥 **"My IDE formatting broke everything!"** | 🎨 **Prettier Magic**: Auto-format on save (no more manual cleanup)             |
+| 😱 **"Who committed this broken code?!"** | 🛡️ **ESLint Shield**: Catches errors pre-commit                                 |
+| 🥊 **"Tabs vs spaces debate round 47..."** | ✨ **Prettier Peace Treaty**: Auto-formats code - team debates = extinct        |
+
+<sub>▼ Click to expand why this matters ▼</sub>
+
+<details>
+<summary>💡 Why This Matters</summary>
+
+1. **Save 3-5 hours/week** on code reviews arguing about style  
+2. **Reduce CI failures** by 80%+ with pre-commit checks  
+3. **Onboard new devs faster** with consistent standards  
+</details>
+
 ## 🛠 What You Get in 30 Seconds
 
 - ✅ ESLint - Catch bugs before runtime
@@ -38,31 +60,13 @@ npx @suha/dev-starter
 > ℹ️ **Angular Users**: While possible to use, it requires [additional setup](FAQ.md#angular-configuration).  
 > Our defaults are optimized for React/Vue/Node projects.
 
-## 💔 _We've All Been There..._
-
-| Developer Frustration 😤         |    Solution 💡                                                                 |
-|----------------------------------|---------------------------------------------------------------------------------|
-| 🚨 **"Why does CI keep failing?!"** | 🐶 **Husky Guard**: Blocks bad commits *before* they reach CI/CD                |
-| 💥 **"My IDE formatting broke everything!"** | 🎨 **Prettier Magic**: Auto-format on save (no more manual cleanup)             |
-| 😱 **"Who committed this broken code?!"** | 🛡️ **ESLint Shield**: Catches errors pre-commit                                 |
-| 🥊 **"Tabs vs spaces debate round 47..."** | ✨ **Prettier Peace Treaty**: Auto-formats code - team debates = extinct        |
-
-<sub>▼ Click to expand why this matters ▼</sub>
-
-<details>
-<summary>💡 Why This Matters</summary>
-
-1. **Save 3-5 hours/week** on code reviews arguing about style  
-2. **Reduce CI failures** by 80%+ with pre-commit checks  
-3. **Onboard new devs faster** with consistent standards  
-</details>
 
 ## 🚀 Get Started in 10 Seconds
 
 Run in any JS/TS project root:
 
 ```bash
-npx @suha/dev-starter
+npx @suha/code-shield
 ```
 
  ## Commit like a pro:
@@ -84,13 +88,12 @@ git commit -m "feat: add magic"  # Husky auto-fixes + checks!
 ### 🌟 What This Gives You
 
 
-| Feature               | Benefit                                                                 |
-|-----------------------|-------------------------------------------------------------------------|
-| 🛡️ **Guard Rails**    | No bad code reaches your repo - even if teammates forget to lint       |
-| 💅 **Beautified Code** | Every commit gets Prettier-polished automatically                      |
-| 🤝 **Team Harmony**    | Zero arguments about code style - rules enforced consistently          |
-| ⚡ **Speed Boost**     | Spend time on features, not fixing CI failures                         |
-
+| Feature               | Superpower                                  | Saves You From                          |
+|-----------------------|---------------------------------------------|------------------------------------------|
+| 🐞 **Bug Ninja**      | Finds undefined vars before runtime         | "Why is this broken?!" debugging         |
+| 🎨 **Style Sorcerer** | Auto-formats code on save                   | Manual indentation wars                  |
+| 🐶 **Commit Watchdog**| Blocks bad pushes pre-CI                    | Embarrassing build failure emails        |
+| ⚡ **Flash Linter**   | Only checks changed files                   | Waiting 10min for full repo linting      |
 
  
 ## ❓ FAQ
@@ -100,7 +103,7 @@ A: Yes! Just install [`@typescript-eslint/parser`](https://npmjs.com/package/@ty
 
 **Q: Can I use this with Angular projects?**  
 A: Absolutely! Just follow these steps:  
-1. Run `npx @suha/dev-starter`  
+1. Run `npx @suha/code-shield`  
 2. Install Angular-specific dependencies:  
    ```bash
    npm install --save-dev @angular-eslint/eslint-plugin @typescript-eslint/parser
