@@ -48,8 +48,5 @@
   },
   "engines": {
     "node": ">=14.0.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.7"
   }
 }
