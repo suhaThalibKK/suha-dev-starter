@@ -4,7 +4,7 @@
   "homepage": "https://github.com/suhaThalibKK/suha-dev-starter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/suhaThalibKK/suha-dev-starter.git"
+    "url": "git+https://github.com/suhaThalibKK/suha-dev-starter.git"
   },
   "publishConfig": {
     "access": "public"
@@ -13,7 +13,7 @@
   "type": "module",
   "main": "src/setup.js",
   "bin": {
-    "dev-starter": "./bin/dev-starter.js"
+    "dev-starter": "bin/dev-starter.js"
   },
   "scripts": {
     "postinstall": "node src/setup.js",
