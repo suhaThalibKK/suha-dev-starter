@@ -1,6 +1,11 @@
 {
   "name": "@suha.thalib/code-shield",
   "version": "1.0.0",
+  "homepage": "https://github.com/suhaThalibKK/suha-dev-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suhaThalibKK/suha-dev-starter.git"
+  },
   "publishConfig": {
     "access": "public"
   },

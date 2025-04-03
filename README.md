@@ -43,9 +43,6 @@ npx @suha.thalib/code-shield
 - ✅ ESLint - Catch bugs before runtime
 - ✅ Prettier - Auto-format on save (no more manual cleanup)
 - ✅ Husky - Guard commits like a watchdog 🐶
-- ✅ **Universal** - Works out of the box with: <img src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs" height="20"> <img src="https://img.shields.io/badge/React-20232A?logo=react" height="20">  <img src="https://img.shields.io/badge/Vue-4FC08D?logo=vuedotjs" height="20">  
-
-**Zero extra config needed** for these frameworks! 🎉
 
 
 ## 🛠 Framework Compatibility
@@ -57,9 +54,6 @@ npx @suha.thalib/code-shield
 | ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=nodedotjs) | ❌ No | ✅ Yes |  
 | ![Angular](https://img.shields.io/badge/-Angular-DD0031?logo=angular) | ✅ Yes | ❌ No |  
 
-
-> ℹ️ **Angular Users**: While possible to use, it requires [additional setup](FAQ.md#angular-configuration).  
-> Our defaults are optimized for React/Vue/Node projects.
 
 
 ## 🚀 Get Started in 10 Seconds
