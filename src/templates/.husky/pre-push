@@ -1,5 +1,3 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
 if [[ -n $(git diff --name-only) ]]; then
   echo "Error: Unstaged changes detected. Run 'git add .' and commit again."
