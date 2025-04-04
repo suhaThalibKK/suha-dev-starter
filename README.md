@@ -8,7 +8,7 @@
 ## ⚡ Quick Start
 
 ```bash
-npx @suha.thalib/code-shield
+npx @suha.thalib/code-shield@latest
 ```
 
 ### _One Command to Rule All Code Quality_  
@@ -61,7 +61,7 @@ npx @suha.thalib/code-shield
 Run in any JS/TS project root:
 
 ```bash
-npx @suha.thalib/code-shield
+npx @suha.thalib/code-shield@latest
 ```
 
  ## Commit like a pro:
@@ -98,7 +98,7 @@ A: Yes! Just install [`@typescript-eslint/parser`](https://npmjs.com/package/@ty
 
 **Q: Can I use this with Angular projects?**  
 A: Absolutely! Just follow these steps:  
-1. Run `npx @suha.thalib/code-shield`  
+1. Run `npx @suha.thalib/code-shield@latest`  
 2. Install Angular-specific dependencies:  
    ```bash
    npm install --save-dev @angular-eslint/eslint-plugin @typescript-eslint/parser
