@@ -49,6 +49,7 @@ async function updatePackageJson(userDir) {
       'format:write': 'prettier --write .',
       lint: 'eslint .',
       'lint:fix': 'eslint --fix .',
+      prepare: 'husky',
     };
 
     // Add or update lint-staged section
@@ -56,6 +57,9 @@ async function updatePackageJson(userDir) {
       '*.js': 'eslint --fix',
       '*.{js,css,md}': 'prettier --write',
     };
+
+    // Ensure type is set to module
+    packageJson.type = 'module';
 
     // Write updated package.json back to file
     await writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));
@@ -118,6 +122,26 @@ async function setupProject() {
     console.log('⚡ Updating package.json...');
     await updatePackageJson(userDir);
 
+    // Step 2.5: Initialize Husky
+    console.log('⚡ Initializing Husky...');
+    await new Promise((resolve, reject) => {
+      const huskyProcess = spawn(
+        'npx',
+        ['husky', 'init'],
+        {
+          stdio: 'inherit',
+          cwd: userDir,
+          shell: true,
+        }
+      );
+
+      huskyProcess.on('close', (code) => {
+        code === 0 ? resolve() : reject(new Error(`Husky initialization failed with code ${code}`));
+      });
+
+      huskyProcess.on('error', reject);
+    });
+
     // Step 3: Copy configuration files
     console.log('⚡ Setting up configuration files...');
     for (const file of CONFIG_FILES) {
@@ -125,6 +149,15 @@ async function setupProject() {
       const destPath = path.join(userDir, file.dest); // Destination file path in the user's project
       await copyWithBackup(srcPath, destPath); // Copy the file with backup handling
     }
+
+    // Update the pre-commit file with the template data
+    const preCommitTemplatePath = path.join(templatesDir, '.husky/pre-commit');
+    const preCommitFilePath = path.join(userDir, '.husky/pre-commit');
+
+    console.log('⚡ Updating .husky/pre-commit with template data...');
+    const preCommitTemplateData = await readFile(preCommitTemplatePath, 'utf-8');
+    await writeFile(preCommitFilePath, preCommitTemplateData);
+    console.log('✅ .husky/pre-commit updated successfully.');
 
     // Step 4: Set permissions for Git hooks (only on non-Windows platforms)
     console.log('🔧 Configuring Git hooks...');
