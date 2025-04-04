@@ -1,4 +1,4 @@
-import { mkdir, copyFile, chmod } from 'node:fs/promises'; // Import file system promises for async operations
+import { mkdir, copyFile, chmod, readFile, writeFile } from 'node:fs/promises'; // Import file system promises for async operations
 import { access, constants } from 'node:fs'; // Import access and constants for file existence checks
 import { spawn } from 'node:child_process'; // Import spawn to execute shell commands
 import path from 'node:path'; // Import path for file and directory path manipulations
@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 // Function to check if a file or directory exists
 async function pathExists(filePath) {
   try {
-    await access(filePath, constants.F_OK); // Check if the file is accessible
+    access(filePath, constants.F_OK); // Check if the file is accessible
     return true; // File exists
   } catch {
     return false; // File does not exist
@@ -32,6 +32,38 @@ async function copyWithBackup(src, dest) {
   
   // Copy the source file to the destination
   await copyFile(src, dest);
+}
+
+// Function to update package.json with scripts and lint-staged configuration
+async function updatePackageJson(userDir) {
+  const packageJsonPath = path.join(userDir, 'package.json'); // Path to package.json
+
+  try {
+    const packageJsonData = await readFile(packageJsonPath, 'utf-8'); // Read package.json
+    const packageJson = JSON.parse(packageJsonData); // Parse JSON
+
+    // Add or update scripts section
+    packageJson.scripts = {
+      ...packageJson.scripts,
+      format: 'prettier --check .',
+      'format:write': 'prettier --write .',
+      lint: 'eslint .',
+      'lint:fix': 'eslint --fix .',
+    };
+
+    // Add or update lint-staged section
+    packageJson['lint-staged'] = {
+      '*.js': 'eslint --fix',
+      '*.{js,css,md}': 'prettier --write',
+    };
+
+    // Write updated package.json back to file
+    await writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));
+    console.log('📄 Updated package.json with scripts and lint-staged configuration.');
+  } catch (error) {
+    console.error('❌ Failed to update package.json:', error.message);
+    throw error;
+  }
 }
 
 // Configuration files to be copied from the templates directory to the user's project
@@ -82,7 +114,11 @@ async function setupProject() {
       npmProcess.on('error', reject);
     });
 
-    // Step 2: Copy configuration files
+    // Step 2: Update package.json with scripts and lint-staged configuration
+    console.log('⚡ Updating package.json...');
+    await updatePackageJson(userDir);
+
+    // Step 3: Copy configuration files
     console.log('⚡ Setting up configuration files...');
     for (const file of CONFIG_FILES) {
       const srcPath = path.join(templatesDir, file.src); // Source file path in the templates directory
@@ -90,7 +126,7 @@ async function setupProject() {
       await copyWithBackup(srcPath, destPath); // Copy the file with backup handling
     }
 
-    // Step 3: Set permissions for Git hooks (only on non-Windows platforms)
+    // Step 4: Set permissions for Git hooks (only on non-Windows platforms)
     console.log('🔧 Configuring Git hooks...');
     if (process.platform !== 'win32') {
       const preCommitPath = path.join(userDir, '.husky/pre-commit'); // Path to the pre-commit hook
