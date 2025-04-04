@@ -43,6 +43,11 @@ async function updatePackageJson(userDir) {
     const packageJson = JSON.parse(packageJsonData); // Parse JSON
 
     // Add or update scripts section
+
+        // Ensure type is set to module
+        packageJson.type = 'module';
+    // Ensure scripts section exists
+
     packageJson.scripts = {
       ...packageJson.scripts,
       format: 'prettier --check .',
@@ -58,8 +63,6 @@ async function updatePackageJson(userDir) {
       '*.{js,css,md}': 'prettier --write',
     };
 
-    // Ensure type is set to module
-    packageJson.type = 'module';
 
     // Write updated package.json back to file
     await writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));

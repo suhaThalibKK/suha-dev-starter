@@ -1,7 +1,9 @@
 # 🚀 **@suha.thalib/code-shield**  
+
+
 ### **Zero-Config Code Quality Toolkit for Modern Projects**  
 
-[![npm version](https://img.shields.io/badge/Version-1.0.0-blue)](https://www.npmjs.com/package/@suha.thalib/code-shield)
+[![npm version](https://img.shields.io/badge/Version-1.0.8-blue)](https://www.npmjs.com/package/@suha.thalib/code-shield)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # 🔥 **Bye-Bye Config Headaches!**  
@@ -45,20 +47,9 @@ npx @suha.thalib/code-shield@latest
 - ✅ Husky - Guard commits like a watchdog 🐶
 
 
-## 🛠 Framework Compatibility
-
-| Framework | Needs Extra Config? | Recommended to Include? |  
-|-----------|---------------------|-------------------------|  
-| ![React](https://img.shields.io/badge/-React-61DAFB?logo=react) | ❌ No | ✅ Yes |  
-| ![Vue](https://img.shields.io/badge/-Vue-4FC08D?logo=vuedotjs) | ❌ No | ✅ Yes |  
-| ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=nodedotjs) | ❌ No | ✅ Yes |  
-| ![Angular](https://img.shields.io/badge/-Angular-DD0031?logo=angular) | ✅ Yes | ❌ No |  
-
-
-
 ## 🚀 Get Started in 10 Seconds
 
-Run in any JS/TS project root:
+Run in any JS project root:
 
 ```bash
 npx @suha.thalib/code-shield@latest
